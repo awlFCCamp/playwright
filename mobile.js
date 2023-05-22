@@ -1,5 +1,7 @@
 const { chromium, devices } = require("playwright");
-const iPhone = devices["iPhone 11"](async () => {
+const iPhone = devices["iPhone 11"];
+
+(async () => {
   const browser = await chromium.launch({ headless: false, slowMo: 500 });
   const context = await browser.newContext({
     ...iPhone,
